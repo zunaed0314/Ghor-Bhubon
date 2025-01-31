@@ -1,0 +1,65 @@
+﻿@model Ghor_Bhubon.Models.User
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Role">Role:</label>
+        <select asp-for="Role" class="form-control">
+            <option value="Landlord">Landlord</option>
+            <option value="Tenant">Tenant</option>
+            <option value="Admin">Admin</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="FirstName">First Name:</label>
+        <input asp-for="FirstName" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="LastName">Last Name:</label>
+        <input asp-for="LastName" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="PhoneNumber">Phone Number:</label>
+        <input asp-for="PhoneNumber" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ProfilePicture">Profile Picture:</label>
+        <input type="file" name="ProfilePicture" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="Birthdate">Birthdate:</label>
+        <input asp-for="Birthdate" type="date" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Gender">Gender:</label>
+        <div>
+            <input type="radio" asp-for="Gender" value="Male" required /> Male
+            <input type="radio" asp-for="Gender" value="Female" required /> Female
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Email">Email:</label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="PasswordHash">Password:</label>
+        <input asp-for="PasswordHash" type="password" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ConfirmPassword">Confirm Password:</label>
+        <input type="password" name="ConfirmPassword" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
